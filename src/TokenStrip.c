@@ -5,14 +5,19 @@
 #include <lmcons.h>
 #include "syscalls.h"
 
+#define STATUS_SUCCESS ((NTSTATUS)0x00000000L)
+
+// ADVAPI32
 WINADVAPI DWORD WINAPI ADVAPI32$GetLengthSid(PSID pSid);
 WINADVAPI BOOL WINAPI ADVAPI32$GetUserNameA(LPSTR lpBuffer, LPDWORD pcbBuffer);
 WINADVAPI BOOL WINAPI ADVAPI32$LookupPrivilegeValueA(LPCSTR lpSystemName, LPCSTR lpName, PLUID lpLuid);
+
+// KERNEL32
 WINBASEAPI DWORD WINAPI KERNEL32$GetLastError();
 DECLSPEC_IMPORT HANDLE WINAPI KERNEL32$GetCurrentProcess();
-WINBASEAPI int __cdecl MSVCRT$_stricmp(const char* string1, const char* string2);
 
-#define STATUS_SUCCESS ((NTSTATUS)0x00000000L)
+// MSVCRT
+WINBASEAPI int __cdecl MSVCRT$_stricmp(const char* string1, const char* string2);
 
 BOOL isSystem(const char* systemUsername)
 {
