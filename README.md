@@ -9,6 +9,10 @@ This project aims to weaken AV and EDR products by deleting the process' token p
 ```
 $ git clone https://github.com/nick-frischkorn/TokenStripBOF.git && cd TokenStripBOF/src
 $ x86_64-w64-mingw32-gcc -c TokenStrip.c -o TokenStripBOF.o -masm=intel
+[OR]
+$ git clone https://github.com/nick-frischkorn/TokenStripBOF.git && cd TokenStripBOF/src
+$ x86_64-w64-mingw32-gcc -c TokenStrip.c -o TokenStripBOF.o -masm=intel -Wall -DBOF
+$ x86_64-w64-mingw32-strip --strip-unneeded TokenStripBOF.o
 ```
 ### Usage
 ```
