@@ -4,7 +4,7 @@ TokenStrip is a Beacon Object File implementation of pwn1sher's [KillDefender](h
 
 This project aims to weaken AV and EDR products by deleting the process' token privileges and then lowering the integrity level to untrusted. 
 
-**Note: **System privileges are required to run this BOF!
+**Note:** System privileges are required to run this BOF!
 
 ##### How To Compile
 ```
