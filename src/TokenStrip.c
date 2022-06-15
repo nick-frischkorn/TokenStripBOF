@@ -5,7 +5,6 @@
 #include <lmcons.h>
 #include "syscalls.h"
 
-DECLSPEC_IMPORT DWORD WINAPI ADVAPI32$GetLengthSid(PSID);
 WINADVAPI DWORD WINAPI ADVAPI32$GetLengthSid(PSID pSid);
 WINADVAPI BOOL WINAPI ADVAPI32$GetUserNameA(LPSTR lpBuffer, LPDWORD pcbBuffer);
 WINADVAPI BOOL WINAPI ADVAPI32$LookupPrivilegeValueA(LPCSTR lpSystemName, LPCSTR lpName, PLUID lpLuid);
