@@ -199,8 +199,8 @@ void go(char* args, int len)
 	}
 
 	getDebugPriv();
-
 	targetHandle = getHandleToTargetProc(pid);
 	stripPrivileges(targetHandle);
+	
 	return;
 }
