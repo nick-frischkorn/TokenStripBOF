@@ -1,4 +1,13 @@
-# TokenStripBOF
-Beacon Object File to delete token privileges and lower the integrity level to untrusted for a specified process
+### TokenStripBOF
+
+TokenStrip is a Beacon Object File implementation of pwn1sher's [KillDefender](https://github.com/pwn1sher/KillDefender/) project utilzing syscalls via [InlineWhispers](https://github.com/outflanknl/InlineWhispers).
+
+This project aims to weaken AV and EDR products by deleting the process' token privileges and then lowering the integrity level to untrusted. System privileges are required to run this BOF!
+
+
+
+
 
 ![before](images/before.png)
+
+![after](images/after.png)
