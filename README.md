@@ -15,7 +15,7 @@ $ x86_64-w64-mingw32-gcc -c TokenStrip.c -o TokenStripBOF.o -masm=intel -Wall -D
 $ x86_64-w64-mingw32-strip --strip-unneeded TokenStripBOF.o
 ```
 ### Usage
-First load the aggressor script
+Load the aggressor script
 ```
 beacon> TokenStrip <PID>
 beacon> TokenStrip 9085
