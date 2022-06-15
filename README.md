@@ -15,8 +15,8 @@ $ x86_64-w64-mingw32-gcc -c TokenStrip.c -o TokenStripBOF.o -masm=intel
 beacon> TokenStrip <PID>
 beacon> TokenStrip 9085
 ```
-### Improvements
-- This was my first attempt at making a BOF and I could not figure out how to get [SysWhispers2BOF](https://github.com/FalconForceTeam/SysWhispers2BOF) to work so I opted for InlineWhispers. Some improvements to make are upgrading to dynamically resolving syscall numbers and jumping to syscall instructions within ntdll.dll similar to techniques displayed in [SysWhispers3](https://github.com/klezVirus/SysWhispers3).
+### To Do
+This was my first attempt at making a BOF and I could not figure out how to get [SysWhispers2BOF](https://github.com/FalconForceTeam/SysWhispers2BOF) to work so I opted for InlineWhispers. Some improvements to make are upgrading to dynamically resolving syscall numbers and jumping to syscall instructions within ntdll.dll similar to techniques displayed in [SysWhispers3](https://github.com/klezVirus/SysWhispers3).
 
 ### Before
 ![before](images/before.png)
